@@ -24,6 +24,8 @@ int main(){
     setlocale(LC_ALL,"");
 
 
+
+    
     ajouterSalle("Mercure",10,10.0,"Wi-Fi");
     ajouterSalle("Venus",15,18.0,"Projecteur, Wi-Fi");
     ajouterSalle("Terre",20,25.0,"Projecteur, Wi-Fi, Tableau blanc");
@@ -34,10 +36,9 @@ int main(){
     ajouterSalle("Neptune",10,15.0,"Projecteur");
 
 
-
     chargerReservations();
 
     menu();
-
+    
     return 0;
 }
