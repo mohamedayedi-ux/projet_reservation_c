@@ -309,6 +309,9 @@ Mise à jour après chaque modification
 ⭐ 10. Tâches Supplémentaires Réalisées (en plus du cahier des charges)
 
 Voici ce que ton projet fait au-delà des exigences initiales :
+✅ Estimation automatique du coût de réservation
+
+→ Estime automatiquement le cout.
 
 ✅ Recommandation intelligente des salles
 
