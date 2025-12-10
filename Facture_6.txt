@@ -1,0 +1,7 @@
+===== FACTURE =====
+Client : Groupe d'Etudiants
+Salle : Mercure
+Date : 22/11/2025
+Heure : 13:00-15:00
+Duree : 2 h 0 min
+Montant : 20,00 TND

@@ -1,0 +1,7 @@
+ID: 1 | Client: Entreprise SAHARA TECH    | Salle: Terre    | Date: 10/12/2025 | Début: 09:00 | Fin: 11:00 | Personnes: 15 | Tarif: 50,00 TND | Statut: confirmee
+ID: 2 | Client: Association Green Earth    | Salle: Mars    | Date: 15/12/2025 | Début: 14:00 | Fin: 16:00 | Personnes: 10 | Tarif: 30,00 TND | Statut: confirmee
+ID: 3 | Client: Club des Entrepreneurs    | Salle: Jupiter    | Date: 20/12/2025 | Début: 10:00 | Fin: 13:00 | Personnes: 25 | Tarif: 90,00 TND | Statut: confirmee
+ID: 4 | Client: Startup InnovateX    | Salle: Venus    | Date: 05/11/2025 | Début: 08:30 | Fin: 10:30 | Personnes: 12 | Tarif: 36,00 TND | Statut: confirmee
+ID: 5 | Client: Organisation Culturelle    | Salle: Saturne    | Date: 18/11/2025 | Début: 15:00 | Fin: 17:00 | Personnes: 15 | Tarif: 40,00 TND | Statut: confirmee
+ID: 6 | Client: Groupe d'Etudiants    | Salle: Mercure    | Date: 22/11/2025 | Début: 13:00 | Fin: 15:00 | Personnes: 8 | Tarif: 20,00 TND | Statut: confirmee
+ID: 7 | Client: Louati Oussema | Salle: Jupiter | Date: 12/12/2025 | Début: 08:00 | Fin: 12:00 | Personnes: 20 | Tarif: 120,00 TND | Statut: confirmee
