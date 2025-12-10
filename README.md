@@ -76,7 +76,7 @@ Projet/
 
 ## 🖥️⚙️ Compilation
 
- GCC.txt
+ Pour la compilation.txt
 
  ---
 
@@ -251,6 +251,7 @@ Le fichier Reservations.txt contient toutes les réservations.
 Le chargement est effectué au démarrage, et la sauvegarde après chaque modification.
 
 📌 9. Tâches du Projet (Exigences Respectées)
+
 ✔ Tâche 1 : Modèle de données
 
 Structures Salle et Reservation complètes
