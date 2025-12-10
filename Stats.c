@@ -3,6 +3,7 @@
 #include <string.h>
 #include "Stats.h"
 
+
 void statistiquesCompletes() {
     int choix;
     do {
@@ -13,7 +14,7 @@ void statistiquesCompletes() {
         printf("0. Retour au menu principal\n");
         printf("Votre choix : ");
         scanf("%d", &choix);
-        getchar();
+        getchar(); 
 
         switch(choix) {
             case 1: { 
@@ -43,7 +44,7 @@ void statistiquesCompletes() {
                 break;
             }
 
-            case 3: {
+            case 3: { 
                 int mois, annee;
                 printf("Entrez le mois (1-12) : ");
                 scanf("%d", &mois);
@@ -65,14 +66,16 @@ void statistiquesCompletes() {
     } while (choix != 0);
 }
 
-void recommanderSalles(int nb_personnes, char date[11], char debut[6], char fin[6]) {
+
+
+int recommanderSalles(int nb_personnes, char date[11], char debut[6], char fin[6]) {
     printf("\n--- Salles disponibles pour %d personnes le %s de %s a %s ---\n",
            nb_personnes, date, debut, fin);
 
     int trouve = 0;
 
     for (int i = 0; i < nb_salles; i++) {
-       
+
         if (salles[i].capacite >= nb_personnes &&
             salleDisponible(salles[i], date, debut, fin) == 1) {
 
@@ -82,14 +85,21 @@ void recommanderSalles(int nb_personnes, char date[11], char debut[6], char fin[
                    salles[i].capacite,
                    salles[i].tarif_horaire,
                    salles[i].equipements);
-
             trouve = 1;
+            return trouve;
         }
     }
-
-    if (!trouve)
-        printf("Aucune salle disponible pour ce créneau.\n");
+    
+    if (!trouve) {
+        printf("Aucune salle disponible pour ce creneau.\n");
+        trouve = 0;
+        return trouve; 
+    }
 }
+
+
+
+
 int compterReservationsParMois(int mois, int annee){
     int compteur=0;
     for(int i=0;i<nb_reservations;i++){
@@ -102,6 +112,9 @@ int compterReservationsParMois(int mois, int annee){
     }
     return compteur;
 }
+
+
+
 void afficherSallesPopulaires(int mois, int annee){
     printf("\n--- Salles les plus populaires pour %02d/%04d ---\n",mois,annee);
     int maxReservations=0;
@@ -138,7 +151,6 @@ void afficherSallesPopulaires(int mois, int annee){
         }
     }
 }
-
 
 
 
