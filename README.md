@@ -77,7 +77,9 @@ Projet/
 ## 🖥️⚙️ Compilation
 
  Pour la compilation.txt
-
+ ---
+ gcc main.c Menu.c Facture.c FonctionsAux.c GestionSalle.c Reservation.c Stats.c -o Systeme_de_Gestion_de_Reservations.exe
+ Systeme_de_Gestion_de_Reservations.exe
  ---
 
 ## ▶️ Exécution
