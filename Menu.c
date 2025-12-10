@@ -3,6 +3,7 @@
 #include <string.h>
 #include "Menu.h"
 
+
 void menu() {
     int choix;
     int nextId=nb_reservations+1;
@@ -43,16 +44,18 @@ void menu() {
             }
 
             
-           
             while(heureEnMinutes(fin)<=heureEnMinutes(debut)){
                 printf("Erreur : L'heure de fin doit etre apres l'heure de debut.\n");
                 lireHeure(fin,"Heure fin");
             }
-        }
-
+            }
+            int x;
+            x=recommanderSalles(nb_personnes, date, debut, fin);
             
-
-            recommanderSalles(nb_personnes,date,debut,fin);
+            if (x == 0) {
+                continue; 
+            }
+            
             printf("Choisir la salle (nom) : "); fgets(nom_salle,sizeof(nom_salle),stdin); nettoyerChaine(nom_salle);
             while (1) 
             {
