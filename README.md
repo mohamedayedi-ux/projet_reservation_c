@@ -94,7 +94,8 @@ Projet/
 
 Les structures principales sont définies dans Structures.h :
 
-Structure Salle
+Structure Salle :
+
 typedef struct {
     char nom[50];
     int capacite;
@@ -102,7 +103,8 @@ typedef struct {
     char equipements[200];
 } Salle;
 
-Structure Reservation
+Structure Reservation : 
+
 typedef struct {
     int id;
     char nom_client[50];
