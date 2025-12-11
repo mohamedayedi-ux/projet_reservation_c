@@ -11,20 +11,23 @@
 #include "Menu.h"
 #include "facture.h"
 
-
-
+// ---------------------------
+// Tableaux pour stocker salles et réservations
+// ---------------------------
 
 Salle salles[MAX_SALLES];
 int nb_salles = 0;
 Reservation reservations[MAX_RES];
 int nb_reservations = 0;
 
-
+// ---------------------------
+// Programme principal
+// ---------------------------
 int main(){
     setlocale(LC_ALL,"");
 
 
-
+    // creation des salles initiales dans le fichier tarif.txt
     
     ajouterSalle("Mercure",10,10.0,"Wi-Fi");
     ajouterSalle("Venus",15,18.0,"Projecteur, Wi-Fi");
@@ -36,6 +39,7 @@ int main(){
     ajouterSalle("Neptune",10,15.0,"Projecteur");
 
 
+    // Charger les réservations depuis le fichier
     chargerReservations();
 
     menu();
