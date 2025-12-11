@@ -37,48 +37,7 @@ void afficherSalles() {
     }
 }
 
-// ---------------------------
-// Lecture sécurisée de la date et de l'heure
-// ---------------------------
-void lireDate(char date[11]) {
-    char buffer[20];
-    int j,m,a;
-    do {
-        printf("Date (JJ/MM/AAAA) : ");
-        fgets(buffer,sizeof(buffer),stdin);
-        if(sscanf(buffer,"%d/%d/%d",&j,&m,&a)==3 && j>=1 && j<=31 && m>=1 && m<=12 && a>=2023){
-            sprintf(date,"%02d/%02d/%04d",j,m,a);
-            break;
-        } else {
-            printf("Format invalide. Reessayez.\n");
-        }
-    } while(1);
-}
 
-void lireHeure(char heure[6], const char *message) {
-    char buffer[20];
-    int h,m;
-    do {
-        printf("%s (HH:MM) : ", message);
-        fgets(buffer,sizeof(buffer),stdin);
-        if(sscanf(buffer,"%d:%d",&h,&m)==2 && h>=0 && h<=23 && m>=0 && m<=59){
-            sprintf(heure,"%02d:%02d",h,m);
-            break;
-        } else {
-            printf("Format invalide. Reessayez.\n");
-        }
-    } while(1);
-}
-
-
-// ---------------------------
-// Nettoyage des chaînes
-// ---------------------------
-void nettoyerChaine(char *str) {
-    for(int i=0; str[i]!='\0'; i++){
-        if(str[i]=='\n'){ str[i]='\0'; break; }
-    }
-}
 
 // ---------------------------
 // Recherche d'une salle
@@ -89,4 +48,37 @@ Salle* trouverSalle(char nom_salle[]) {
             return &salles[i];
     }
     return NULL;
+}
+
+// ---------------------------
+// Recommandation de salle
+// ---------------------------
+int recommanderSalles(int nb_personnes, char date[11], char debut[6], char fin[6]) {
+
+    printf("\n--- Salles disponibles pour %d personnes le %s de %s a %s ---\n",
+           nb_personnes, date, debut, fin);
+
+    int trouve = 0;
+
+    for (int i = 0; i < nb_salles; i++) {
+
+        if (salles[i].capacite >= nb_personnes &&
+            salleDisponible(salles[i], date, debut, fin)) {
+
+            printf("%d. %s | Capacite: %d | Tarif: %.2f TND/h | Equipements: %s\n",
+                   i + 1,
+                   salles[i].nom,
+                   salles[i].capacite,
+                   salles[i].tarif_horaire,
+                   salles[i].equipements);
+
+            trouve = 1;
+        }
+    }
+
+    if (!trouve) {
+        printf("Aucune salle disponible pour ce creneau.\n");
+    }
+
+    return trouve;
 }

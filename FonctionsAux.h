@@ -1,22 +1,13 @@
-#ifndef FONCTIONS_AUX_H
-#define FONCTIONS_AUX_H
+#ifndef FONCTIONSAUX_H
+#define FONCTIONSAUX_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "Structures.h"  // <-- indispensable !
-
-// Déclarer les variables définies dans main.c
-extern Salle salles[MAX_SALLES];
-extern int nb_salles;
-extern Reservation reservations[MAX_RES];
-extern int nb_reservations;
+#include "Structures.h"
 
 // ---------------------------
-// Déclarations des fonctions
+// Fonctions auxiliaires
 // ---------------------------
 
-// Convertit une heure "HH:MM" en minutes totales
+// Convertit une heure "HH:MM" en minutes totales depuis minuit
 int heureEnMinutes(char heure[6]);
 
 // Vérifie si deux créneaux horaires se chevauchent
@@ -28,4 +19,17 @@ float calculTarif(Salle salle, char debut[6], char fin[6]);
 // Vérifie si une salle est disponible pour une date et un créneau
 int salleDisponible(Salle salle, char date[11], char debut[6], char fin[6]);
 
-#endif // FONCTIONS_AUX_H
+// Nettoyage des chaînes : supprime le '\n' de fgets
+void nettoyerChaine(char *str);
+
+// ---------------------------
+// Lecture sécurisée de la date et de l'heure
+// ---------------------------
+
+// Lecture d'une date au format JJ/MM/AAAA
+void lireDate(char date[11]);
+
+// Lecture d'une heure au format HH:MM
+void lireHeure(char heure[6], const char *message);
+
+#endif // FONCTIONSAUX_H

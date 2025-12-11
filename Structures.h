@@ -29,4 +29,9 @@ typedef struct {
     char statut[20];      
 } Reservation;
 
+extern Salle salles[MAX_SALLES];
+extern int nb_salles;
+
+extern Reservation reservations[MAX_RES];
+extern int nb_reservations;
 #endif // STRUCTURES_H
