@@ -9,7 +9,7 @@
 #include "Reservation.h"
 #include "Stats.h"
 #include "Menu.h"
-#include "facture.
+#include "facture.h"
 
 // ---------------------------
 // Tableaux pour stocker salles et réservations
@@ -45,5 +45,4 @@ int main(){
     menu();
     
     return 0;
-
 }

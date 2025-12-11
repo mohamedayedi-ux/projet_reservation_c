@@ -4,7 +4,7 @@
 #include "Stats.h"
 
 
-// ---------------------------ju
+// ---------------------------
 // Affichage des statistiques
 // ---------------------------
 void statistiquesCompletes() {
@@ -129,7 +129,6 @@ void afficherSallesPopulaires(int mois, int annee){
         }
     }
 }
-
 
 
 

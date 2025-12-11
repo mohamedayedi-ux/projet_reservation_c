@@ -1,4 +1,4 @@
-k#ifndef MENU_H
+#ifndef MENU_H
 #define MENU_H
 
 #include <stdio.h>
@@ -21,4 +21,3 @@ extern int nb_reservations;
 void menu();
 
 #endif  // MENU_H
-
