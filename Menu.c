@@ -3,7 +3,9 @@
 #include <string.h>
 #include "Menu.h"
 
-
+// ---------------------------
+// Menu interactif
+// ---------------------------
 void menu() {
     int choix;
     int nextId=nb_reservations+1;
@@ -27,7 +29,7 @@ void menu() {
                 printf("Nombre de personnes : ");
                         fgets(buffer, sizeof(buffer), stdin);
                     if (sscanf(buffer, "%d %c", &nb_personnes, &extra) == 1 && nb_personnes > 0) {
-       
+        // OK : un seul entier et rien d'autre
                         break;
                         }
                     printf("Erreur : entrez un nombre entier valide.\n");}            
@@ -44,6 +46,7 @@ void menu() {
             }
 
             
+            // Vérification que l'heure de fin est après l'heure de début et heure debut et fin >8:00 et <23:59
             while(heureEnMinutes(fin)<=heureEnMinutes(debut)){
                 printf("Erreur : L'heure de fin doit etre apres l'heure de debut.\n");
                 lireHeure(fin,"Heure fin");
@@ -51,16 +54,16 @@ void menu() {
             }
             int x;
             x=recommanderSalles(nb_personnes, date, debut, fin);
-            
+            //retour au menu si aucune salle disponible
             if (x == 0) {
-                continue; 
+                continue; // Retour au menu principal
             }
             
             printf("Choisir la salle (nom) : "); fgets(nom_salle,sizeof(nom_salle),stdin); nettoyerChaine(nom_salle);
             while (1) 
             {
                 if (trouverSalle(nom_salle) != NULL) {
-                    break; 
+                    break; // Salle trouvée, sortir de la boucle
                 }
                 printf("Salle invalide. Veuillez ressaisir : ");
                 fgets(nom_salle, sizeof(nom_salle), stdin);
