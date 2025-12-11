@@ -10,7 +10,7 @@ void menu() {
     int choix;
     int nextId=nb_reservations+1;
     char buffer[50];
-
+i
     do{
         printf("\n--- MENU ---\n1. Ajouter une reservation\n2. Afficher la liste des salles\n3. Afficher les statistiques\n4. Annuler ou modifier une reservation\n5. Quitter\nVotre choix : ");
         fgets(buffer,sizeof(buffer),stdin);
@@ -104,3 +104,4 @@ void menu() {
 
     } while(choix!=5);
 }
+
