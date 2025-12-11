@@ -48,7 +48,7 @@ void annulerModifierReservation() {
 
     int trouve = 0;
     for (int i = 0; i < nb_reservations; i++) {
-        if (reservations[i].id == id && strcmp(reservations[i].statut, "confirmee") == 0) {
+        if (reservations[i].id == id) {
             trouve = 1;
 
             printf("Reservation trouvee : %s dans %s le %s de %s a %s\n",
@@ -214,10 +214,27 @@ void chargerReservations() {
         );
 
         if(lus != 9)
-            break;  // ligne incomplète → stop
+            break;
 
+        //  Nettoyage nom salle : enlever espaces début/fin
+        char *n = res.salle.nom;
+
+        // retirer espaces au début
+        while (*n == ' ') n++;
+
+        // copier la chaîne nettoyée
+        strcpy(res.salle.nom, n);
+
+        // retirer espaces à la fin
+        int len = strlen(res.salle.nom);
+        while (len > 0 && res.salle.nom[len - 1] == ' ') {
+            res.salle.nom[--len] = '\0';
+        }
+
+        // Ajouter la réservation dans le tableau
         reservations[nb_reservations++] = res;
     }
 
     fclose(f);
 }
+
